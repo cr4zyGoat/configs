@@ -3,7 +3,6 @@
 set number
 set background=dark
 
-set tabstop=8
+set tabstop=4
+set softtabstop=0 noexpandtab
 set shiftwidth=4
-set softtabstop=4
-
