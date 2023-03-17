@@ -5,15 +5,14 @@
 
 
 # Alias
-alias t="tmux"
-alias c="clear"
 alias ..="cd .."
 alias ll="ls -lh"
 alias la="ls -lha"
-alias hosts="sudo vi /etc/hosts"
+alias cdtmp='cd $(mktemp -d)'
+
 alias open="xdg-open 2>/dev/null"
+alias ssh="TERM='xterm-256color' ssh"
 
-
-# Functions
-function mkp { mkdir {loot,scans,report,exploit}; }
-
+alias t="tmux"
+alias tls="tmux list-sessions"
+alias tas="tmux attach-session"
