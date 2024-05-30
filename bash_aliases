@@ -36,8 +36,12 @@ hostinfo() {
 		return 1
 	fi
 
+	oshodan=$(shodandb ${target})
+	if [[ -n "${oshodan}" ]]; then
+		json=$(echo -e "${json}" | jq --argjson data "${oshodan}" '. + $data')
+	fi
+
 	echo -e "${json}" \
-		| jq --argjson data "$(shodandb ${target})" '. + $data' \
 		| jq --argjson data "$(ipinfo ${target})" '. + $data' \
 		| jq '. | del(.hostname,.anycast,.readme)'
 }
