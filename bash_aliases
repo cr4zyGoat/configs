@@ -22,7 +22,7 @@ alias tas="tmux attach-session"
 shodandb() { curl -sf https://internetdb.shodan.io/$1 | jq . ; }
 ipinfo() { curl -sf https://ipinfo.io/$1 | jq . ; }
 
-gethostinfo() {
+hostinfo() {
 	target=$1
 	if [[ ${target} =~ [a-zA-Z] ]]; then
 		json="{\"domain\":\"${target}\"}"
